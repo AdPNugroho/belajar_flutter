@@ -16,6 +16,14 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text('Judul AppBar'),
           ),
+          body: Card(
+            child: Column(
+              children: <Widget>[
+                Image.asset('assets/image.jpg'),
+                Text('Deskripsi Gambar')
+              ],
+            ),
+          )
         )
     );
   }
