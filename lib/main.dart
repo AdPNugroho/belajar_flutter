@@ -16,13 +16,24 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text('Judul AppBar'),
           ),
-          body: Card(
-            child: Column(
-              children: <Widget>[
-                Image.asset('assets/image.jpg'),
-                Text('Deskripsi Gambar')
-              ],
-            ),
+          body: Column(
+            children: <Widget>[
+              Container(
+                child: RaisedButton(
+                  onPressed: (){},
+                  child:Text('Button')
+                ),
+                margin: EdgeInsets.all(5),
+              ),
+              Card(
+                child: Column(
+                  children: <Widget>[
+                    Image.asset('assets/image.jpg'),
+                    Text('Deskripsi Gambar')
+                  ],
+                ),
+              ),
+            ],
           )
         )
     );
