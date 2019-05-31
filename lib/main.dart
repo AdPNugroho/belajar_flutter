@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './product_manager.dart';
+import './product_manager.dart'; //Import Widget Product Manager
 
 void main() {
   runApp(MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text('Judul AppBar'),
           ),
-          body: ProductManager()
+          body: ProductManager('Starting') //Memanggil Widget beserta parameter constructor
         )
     );
   }
