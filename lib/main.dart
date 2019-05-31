@@ -9,14 +9,25 @@ void main() {
 
 //statefullW atau statelessW autocomplete
 class MyApp extends StatelessWidget {
+  //Lifecycle hook State
+  // - Input Data => Widget => Render UI
+
+  //Stateless Widget
+  // - Constructor Function => Build()
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        theme: ThemeData( //Setting Konfigurasi Tema dari Widget
+          brightness: Brightness.light,
+          primarySwatch: Colors.red,
+          accentColor: Colors.deepPurple
+        ),
         home: Scaffold(
           appBar: AppBar(
             title: Text('Judul AppBar'),
           ),
-          body: ProductManager('Starting') //Memanggil Widget beserta parameter constructor
+          body: ProductManager(startingProduct:'Starting') //Memanggil Widget beserta parameter constructor named
+          // body: ProductManager('Starting') //Memanggil Widget beserta parameter constructor Alternatif
         )
     );
   }
