@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text('Judul AppBar'),
           ),
-          body: ProductManager(startingProduct:'Starting') //Memanggil Widget beserta parameter constructor named
+          body: ProductManager() //Memanggil Widget beserta parameter constructor named
           // body: ProductManager('Starting') //Memanggil Widget beserta parameter constructor Alternatif
         )
     );

@@ -3,7 +3,7 @@ import './products.dart';
 import './product_control.dart';
 class ProductManager extends StatefulWidget {
   final String startingProduct; //Variabel untuk parameter constructor
-  ProductManager({this.startingProduct = 'Default Deskripsi'}){ //Pengisian variabel constructor
+  ProductManager({this.startingProduct}){ //Pengisian variabel constructor
   // ProductManager({this.startingProduct}){ //Pengisian variabel constructor Tanpa Default Value
   // ProductManager(this.startingProduct){ //Pengisian variabel constructor Alternatif
     print('[ProductManaget Widget] Constructor');
@@ -16,7 +16,7 @@ class ProductManager extends StatefulWidget {
 }
 
 class _ProductManagerState extends State<ProductManager> {
-  List<String> _products = ['Deskripsi Produk']; //Variabel dengan nilai default awal
+  List<String> _products = []; //Variabel dengan nilai default awal
   // List<String> _products = const ['Deskripsi Produk']; //Const, tidak bisa menambahkan value
   // Final List<String> _products = ['Deskripsi Produk']; //Final, tidak bisa assign value baru tetapi masih bisa ditambah valuenya dengan _products.add()
   
@@ -25,7 +25,9 @@ class _ProductManagerState extends State<ProductManager> {
   void initState() { //Method yang dijalankan pertama kali saat state dibuat
     print('[ProductManaget State] initState()');
     super.initState(); //Rekomendasi Code Style
-    _products.add(widget.startingProduct); //Menambah List p roduct dengan parameter constructor dengan bantuan state widget.*****
+    if(widget.startingProduct != null){ //Cek apakah Constructor Null atau Tidak
+      _products.add(widget.startingProduct); //Menambah List p roduct dengan parameter constructor dengan bantuan state widget.*****
+    }
   }
 
   @override
