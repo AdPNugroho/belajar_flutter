@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './products.dart';
+import './product_control.dart';
 class ProductManager extends StatefulWidget {
   final String startingProduct; //Variabel untuk parameter constructor
   ProductManager({this.startingProduct = 'Default Deskripsi'}){ //Pengisian variabel constructor
@@ -30,6 +31,14 @@ class _ProductManagerState extends State<ProductManager> {
     print('[ProductManaget State] didUpdateWidget()');
     super.didUpdateWidget(oldWidget);
   }
+
+  void _updateProduct(String product){
+    setState(() {
+      //StatefulWidget wajib menggunakan setState untuk data yang berubah ubah
+      _products.add(product);
+    });
+  }
+
   //Lifecycle hook State
   //Stateful
   // - Input Data => Widget - Internal State => Render UI
@@ -43,16 +52,7 @@ class _ProductManagerState extends State<ProductManager> {
     return Column(
       children: <Widget>[
         Container(
-          child: RaisedButton(
-              onPressed: () { //Apabila button ditekan, lalukan penambahan data _products
-                setState(() { //StatefulWidget wajib menggunakan setState untuk data yang berubah ubah
-                  _products.add('Tambahan Deskripsi');
-                });
-                // print(_products);
-              },
-              color: Theme.of(context).primaryColor, //Akses Konfigurasi dari ThemeData
-              textColor: Colors.white, //Akses Warna langsung ke Class yang sesuai
-              child: Text('Button')),
+          child: ProductControl(_updateProduct),
           margin: EdgeInsets.all(5), //Margin dari container untuk Button
         ),
         // Products() //Memanggil WidgetList Product Tanpa Value Constructor
