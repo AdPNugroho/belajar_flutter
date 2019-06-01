@@ -25,7 +25,7 @@ class _ProductManagerState extends State<ProductManager> {
   void initState() { //Method yang dijalankan pertama kali saat state dibuat
     print('[ProductManaget State] initState()');
     super.initState(); //Rekomendasi Code Style
-    _products.add(widget.startingProduct); //Menambah List product dengan parameter constructor dengan bantuan state widget.*****
+    _products.add(widget.startingProduct); //Menambah List p roduct dengan parameter constructor dengan bantuan state widget.*****
   }
 
   @override
@@ -58,7 +58,9 @@ class _ProductManagerState extends State<ProductManager> {
           margin: EdgeInsets.all(5), //Margin dari container untuk Button
         ),
         // Products() //Memanggil WidgetList Product Tanpa Value Constructor
-        Products(_products) //Memanggil WidgetList Product
+        Expanded(
+          child: Products(_products)
+        ) //Memanggil WidgetList Product
       ],
     );
   }

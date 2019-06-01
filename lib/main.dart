@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import './product_manager.dart'; //Import Widget Product Manager
+// import 'package:flutter/rendering.dart'; //Debug UI
 
 void main() {
+  // debugPaintSizeEnabled = true; //Mengaktifkan Debug UI
+  // debugPaintBaselinesEnabled = true;
+  // debugPaintPointersEnabled = true;
   runApp(MyApp());
 }
 //Alternatif
@@ -17,6 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // debugShowMaterialGrid: true, //Tampil Grid pada layar 
         theme: ThemeData( //Setting Konfigurasi Tema dari Widget
           brightness: Brightness.light,
           primarySwatch: Colors.red,

@@ -9,7 +9,7 @@ class Products extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print('[Product Widget] Build');
-    return Column( //Kolom Wrapper Vertical Row untuk List CardView
+    return ListView( //Kolom Wrapper Vertical Row untuk List CardView
         children: products //Perulangan data dari variabel products
             .map((element) => Card(
                   child: Column(
