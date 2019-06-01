@@ -17,7 +17,9 @@ class ProductManager extends StatefulWidget {
 
 class _ProductManagerState extends State<ProductManager> {
   List<String> _products = ['Deskripsi Produk']; //Variabel dengan nilai default awal
-
+  // List<String> _products = const ['Deskripsi Produk']; //Const, tidak bisa menambahkan value
+  // Final List<String> _products = ['Deskripsi Produk']; //Final, tidak bisa assign value baru tetapi masih bisa ditambah valuenya dengan _products.add()
+  
 
   @override
   void initState() { //Method yang dijalankan pertama kali saat state dibuat
