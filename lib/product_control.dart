@@ -7,7 +7,7 @@ class ProductControl extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
         onPressed: () {
-          updateProduct('Text');
+          updateProduct({'title':'Judul Produk','image':'assets/image.jpg','price':25000});
           //Apabila button ditekan, lalukan penambahan data _products
           // print(_products);
         },

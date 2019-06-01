@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './pages/home.dart';
 import './product_manager.dart'; //Import Widget Product Manager
 // import 'package:flutter/rendering.dart'; //Debug UI
 
@@ -27,13 +28,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.red,
           accentColor: Colors.deepPurple
         ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('Judul AppBar'),
-          ),
-          body: ProductManager() //Memanggil Widget beserta parameter constructor named
-          // body: ProductManager('Starting') //Memanggil Widget beserta parameter constructor Alternatif
-        )
+        home: HomePage()
     );
   }
 }

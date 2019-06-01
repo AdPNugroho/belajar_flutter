@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import './products.dart';
 import './product_control.dart';
 class ProductManager extends StatefulWidget {
-  final String startingProduct; //Variabel untuk parameter constructor
+  final Map<String, dynamic> startingProduct; //Variabel untuk parameter constructor
   ProductManager({this.startingProduct}){ //Pengisian variabel constructor
   // ProductManager({this.startingProduct}){ //Pengisian variabel constructor Tanpa Default Value
   // ProductManager(this.startingProduct){ //Pengisian variabel constructor Alternatif
@@ -16,7 +16,7 @@ class ProductManager extends StatefulWidget {
 }
 
 class _ProductManagerState extends State<ProductManager> {
-  List<String> _products = []; //Variabel dengan nilai default awal
+  List<Map<String, dynamic>> _products = []; //Variabel dengan nilai default awal
   // List<String> _products = const ['Deskripsi Produk']; //Const, tidak bisa menambahkan value
   // Final List<String> _products = ['Deskripsi Produk']; //Final, tidak bisa assign value baru tetapi masih bisa ditambah valuenya dengan _products.add()
   
@@ -36,13 +36,18 @@ class _ProductManagerState extends State<ProductManager> {
     super.didUpdateWidget(oldWidget);
   }
 
-  void _updateProduct(String product){
+  void _updateProduct(Map<String, dynamic> product){
     setState(() {
       //StatefulWidget wajib menggunakan setState untuk data yang berubah ubah
       _products.add(product);
     });
   }
 
+  void _deleteProduct(int index){
+    setState(() {
+      _products.removeAt(index);
+    });
+  }
   //Lifecycle hook State
   //Stateful
   // - Input Data => Widget - Internal State => Render UI
@@ -61,7 +66,7 @@ class _ProductManagerState extends State<ProductManager> {
         ),
         // Products() //Memanggil WidgetList Product Tanpa Value Constructor
         Expanded(
-          child: Products(_products)
+          child: Products(_products,deleteProduct:_deleteProduct)
         ) //Memanggil WidgetList Product
       ],
     );
