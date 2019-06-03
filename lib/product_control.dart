@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 
 class ProductControl extends StatelessWidget {
-  final updateProduct;
-  ProductControl(this.updateProduct);
+  final Function addProduct;
+
+  ProductControl(this.addProduct);
+
   @override
-  Widget build(BuildContext context) {
-    return RaisedButton(
-        onPressed: () {
-          updateProduct({'title':'Judul Produk','image':'assets/image.jpg','price':25000});
-          //Apabila button ditekan, lalukan penambahan data _products
-          // print(_products);
-        },
-        color:
-            Theme.of(context).primaryColor, //Akses Konfigurasi dari ThemeData
-        textColor: Colors.white, //Akses Warna langsung ke Class yang sesuai
-        child: Text('Button'));
-  }
+    Widget build(BuildContext context) {
+      return RaisedButton(
+            color: Theme.of(context).primaryColor,
+            onPressed: () {
+              addProduct({'title': 'Chocolate', 'image': 'assets/image.jpg'});
+            },
+            child: Text('Add Product'),
+          );
+    }
 }
